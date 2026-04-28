@@ -1,0 +1,7 @@
+cache/
+libraries/
+logs/
+versions/
+*.jar
+world/session.lock
+world/uid.dat

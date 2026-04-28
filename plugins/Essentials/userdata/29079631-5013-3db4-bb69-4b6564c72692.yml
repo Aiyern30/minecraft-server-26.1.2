@@ -1,0 +1,48 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 26.42.176.2
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1777311549528
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1777314531711
+  login: 1777305730434
+money: '0'
+last-account-name: anehveryblack
+lastlocation:
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -114.51404529031993
+  y: 63.0
+  z: 139.76249998807907
+  yaw: 156.6434326171875
+  pitch: 1.61492121219635
+logoutlocation:
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -427.350719741488
+  y: -18.0
+  z: 397.69999998807907
+  yaw: -104.3765640258789
+  pitch: -4.819575786590576
+homes:
+  home:
+    world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+    world-name: world
+    x: -118.44639849200401
+    y: 63.0
+    z: 137.12617009055913
+    yaw: -109.26692199707031
+    pitch: 13.445542335510254

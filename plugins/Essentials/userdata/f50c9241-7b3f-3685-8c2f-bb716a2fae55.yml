@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 26.74.180.239
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1777259810957
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1777273215293
+  login: 1777259801463
+money: '0'
+last-account-name: YourSonGayss
+lastlocation:
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -429.6468968575102
+  y: -18.0
+  z: 394.78914815701984
+  yaw: -1.05023193359375
+  pitch: 4.049762725830078
+logoutlocation:
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -428.48750001192093
+  y: -18.0
+  z: 397.69999998807907
+  yaw: 35.099639892578125
+  pitch: -9.45024585723877
