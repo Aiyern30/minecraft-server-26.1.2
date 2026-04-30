@@ -1,7 +1,7 @@
 teleportenabled: true
 teleportauto: false
 godmode: false
-flymode: false
+flymode: true
 muted: false
 jailed: false
 ip-address: 26.107.158.221
@@ -12,23 +12,23 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1777318310008
+  lastteleport: 1777475408247
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1777367256098
-  login: 1777359834095
+  logout: 1777476520269
+  login: 1777474100713
 money: '1.001'
 last-account-name: MapLeaf_Sia
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: 1755.2749326884314
-  y: 64.0
-  z: -344.5838417442166
-  yaw: -103.207275390625
-  pitch: 8.60049057006836
+  x: -117.5
+  y: 63.0
+  z: 133.5
+  yaw: -90.0
+  pitch: 0.0
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
@@ -41,8 +41,8 @@ homes:
 logoutlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -88.69999998807907
-  y: 56.0
-  z: 214.10944696788965
-  yaw: 178.3155975341797
-  pitch: 6.7584357261657715
+  x: -285.1388962391554
+  y: -41.0
+  z: 11.696188771604069
+  yaw: -43.0654296875
+  pitch: 5.218109607696533
