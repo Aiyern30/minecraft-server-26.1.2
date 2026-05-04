@@ -12,31 +12,31 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1777567724010
+  lastteleport: 1777815027195
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1777568160399
-  login: 1777567517274
+  logout: 1777815168186
+  login: 1777809597767
 money: '0'
 last-account-name: anehveryblack
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -795.0596023916431
-  y: -10.0
-  z: 558.6347600958469
-  yaw: 89.22610473632812
-  pitch: 38.817161560058594
+  x: -68.98067665349612
+  y: 63.0
+  z: 124.07470224208004
+  yaw: -100.18545532226562
+  pitch: 22.11945343017578
 logoutlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -791.9884880722934
-  y: -22.0
-  z: 585.3298940576232
-  yaw: 5.76171875
-  pitch: 16.261104583740234
+  x: -87.8054017862957
+  y: 56.0
+  z: 213.9935918584478
+  yaw: 154.45150756835938
+  pitch: -6.509407997131348
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
