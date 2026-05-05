@@ -1,7 +1,7 @@
 teleportenabled: true
 teleportauto: false
 godmode: false
-flymode: true
+flymode: false
 muted: false
 jailed: false
 ip-address: 26.104.212.162
@@ -12,31 +12,31 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1777887211488
+  lastteleport: 1777974912695
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1777888794179
-  login: 1777882940356
+  logout: 1777975969649
+  login: 1777963730817
 money: '-1.001'
 last-account-name: Lengzai
 logoutlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -167.65769736440123
-  y: 87.0
-  z: 166.03371396518662
-  yaw: -55.481231689453125
-  pitch: 41.70018005371094
+  x: -141.58145888380756
+  y: 82.0
+  z: 187.69999998807907
+  yaw: 159.8995361328125
+  pitch: 5.700135707855225
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -156.30000001192093
-  y: 63.0
-  z: 172.40095251610396
-  yaw: 134.99815368652344
-  pitch: 17.699987411499023
+  x: -148.2591142489453
+  y: 92.03692158105434
+  z: 194.84945075818501
+  yaw: -2.10406494140625
+  pitch: 61.80000686645508
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
