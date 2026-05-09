@@ -1,7 +1,7 @@
 teleportenabled: true
 teleportauto: false
 godmode: false
-flymode: true
+flymode: false
 muted: false
 jailed: false
 ip-address: 26.74.180.239
@@ -12,23 +12,23 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1778156262232
+  lastteleport: 1778253157295
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1778156314332
-  login: 1778155506165
+  logout: 1778254820877
+  login: 1778255093095
 money: '0'
 last-account-name: YourSonGays
 logoutlocation:
-  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
-  world-name: world
-  x: -153.79518897073075
-  y: 64.0
-  z: 180.00404768116246
-  yaw: -67.94943237304688
-  pitch: 8.69997787475586
+  world: 5eb768ec-500a-4240-9bc2-eef8d000687f
+  world-name: world_the_end
+  x: -1146.321508508936
+  y: 61.0
+  z: 388.97973037675405
+  yaw: -44.397735595703125
+  pitch: 35.40000915527344
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
@@ -41,8 +41,8 @@ homes:
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -157.95818828658798
-  y: 63.875
-  z: 177.7423208898926
-  yaw: 158.25027465820312
-  pitch: 16.35001564025879
+  x: -196.4950550200289
+  y: 69.0
+  z: 179.29351735823712
+  yaw: -129.8988800048828
+  pitch: 15.749979972839355

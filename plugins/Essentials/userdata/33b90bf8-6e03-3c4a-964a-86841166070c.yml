@@ -1,7 +1,7 @@
 teleportenabled: true
 teleportauto: false
 godmode: false
-flymode: true
+flymode: false
 muted: false
 jailed: false
 ip-address: 26.104.212.162
@@ -12,31 +12,31 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1778147276676
+  lastteleport: 1778255586660
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1778147401824
-  login: 1778135360950
+  logout: 1778162070594
+  login: 1778252108719
 money: '-1.001'
 last-account-name: Lengzai
 logoutlocation:
-  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
-  world-name: world
-  x: -107.30000001192093
-  y: 72.61712706122357
-  z: 132.69999998807907
-  yaw: -105.150146484375
-  pitch: 26.0999813079834
+  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
+  world-name: world_nether
+  x: -40.86248594600073
+  y: 16.0
+  z: 220.78078735670715
+  yaw: -9.146728515625
+  pitch: -13.79970645904541
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -154.96756208223294
-  y: 118.57797054417914
-  z: 136.36426299658746
-  yaw: -79.49959564208984
-  pitch: 67.35016632080078
+  x: -109.40540890585423
+  y: 69.0
+  z: 142.7353896070694
+  yaw: -92.09979248046875
+  pitch: 33.45002746582031
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
@@ -46,3 +46,11 @@ homes:
     z: 144.30000001192093
     yaw: 60.74998092651367
     pitch: 10.349996566772461
+  ne:
+    world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
+    world-name: world_nether
+    x: -21.30075288821791
+    y: 16.0
+    z: 257.3041603130831
+    yaw: 138.29989624023438
+    pitch: 4.650252819061279
