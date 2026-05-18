@@ -1,9 +1,9 @@
-prefix: '<gradient:#FF00FF:#DD00FF><b>AxGraves</b></gradient> &7» '
+prefix: "<gradient:#FF00FF:#DD00FF><b>AxGraves</b></gradient> &7» "
 
 # how fast should the graves disappear
 # set to -1 to make graves never despawn
 # in seconds
-despawn-time-seconds: 180
+despawn-time-seconds: -1
 
 # should graves drop all items on the ground when they expire?
 # if false: items will be removed
@@ -65,9 +65,9 @@ store-xp: true
 # all the other items will be put AFTER these
 # values: ARMOR, HAND, OFFHAND
 grave-item-order:
-- ARMOR
-- HAND
-- OFFHAND
+  - ARMOR
+  - HAND
+  - OFFHAND
 
 # should the armor parts be auto equipped?
 auto-equip-armor: true
@@ -92,7 +92,7 @@ save-graves:
 # with this setting you can override it
 custom-grave-skull:
   enabled: false
-  base64: ''
+  base64: ""
 
 # you can add any amount of worlds
 # if you don't define a world, the plugin will use the default world limits of the dimension
@@ -110,10 +110,10 @@ spawn-height-limits:
 # you must define at least 1
 # requires a restart to update
 command-aliases:
-- axgraves
-- axgrave
-- graves
-- grave
+  - axgraves
+  - axgrave
+  - graves
+  - grave
 
 # used for the %world% placeholder
 # if a world isn't defined here, it will default to the original name of the world
@@ -126,17 +126,17 @@ world-name:
 # worlds where graves won't spawn
 # this is case-sensitive
 disabled-worlds:
-- blacklisted_world
+  - blacklisted_world
 
 # if players die from any of the following, no graves will be spawned
 # list of valid values: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
 # case sensitive
 blacklisted-death-causes:
-- EXAMPLE_DEATH_CAUSE
+  - EXAMPLE_DEATH_CAUSE
 
 # items that will be removed on death and will not show up in graves
 blacklisted-items:
-  '1':
+  "1":
     material: barrier
     name-contains: Banned item's name
 
