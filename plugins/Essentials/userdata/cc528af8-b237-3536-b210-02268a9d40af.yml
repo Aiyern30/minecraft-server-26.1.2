@@ -1,6 +1,6 @@
 teleportenabled: true
 teleportauto: false
-godmode: true
+godmode: false
 flymode: true
 muted: false
 jailed: false
@@ -12,23 +12,25 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1779002110854
+  lastteleport: 1779793981261
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1779006014124
-  login: 1778996647658
+  logout: 1779793999453
+  login: 1779768848819
+  kits:
+    color: 1779545117389
 money: '0'
 last-account-name: YourSonGays
 logoutlocation:
-  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
-  world-name: world_nether
-  x: -54.81039507893923
-  y: 38.13004690057648
-  z: 636.8452256529192
-  yaw: 62.38427734375
-  pitch: 13.950023651123047
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -129.0709951074898
+  y: 64.0
+  z: 59.22209681125382
+  yaw: -8.162878036499023
+  pitch: 10.21693229675293
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
@@ -39,10 +41,18 @@ homes:
     yaw: 89.700439453125
     pitch: 2.69999361038208
 lastlocation:
-  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
-  world-name: world_nether
-  x: -68.08864835872498
-  y: 64.22924941284418
-  z: 657.2346876332842
-  yaw: 153.29270935058594
-  pitch: 32.70012664794922
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -1431.300000011921
+  y: 185.0
+  z: -254.30000001192093
+  yaw: 101.97933959960938
+  pitch: 33.7500114440918
+mail:
+- legacy: false
+  read: true
+  message: hi
+  sender-name: Lengzai
+  sender-uuid: 33b90bf8-6e03-3c4a-964a-86841166070c
+  timestamp: 1779628333084
+  expire: 0

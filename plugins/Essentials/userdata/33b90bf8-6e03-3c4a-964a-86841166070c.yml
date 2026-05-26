@@ -1,6 +1,6 @@
 teleportenabled: true
 teleportauto: false
-godmode: true
+godmode: false
 flymode: true
 muted: false
 jailed: false
@@ -12,40 +12,38 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1779003701139
+  lastteleport: 1779793861758
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1779005247853
-  login: 1779004825727
+  logout: 1779793999499
+  login: 1779775300510
+  kits:
+    notch: 1779694335689
+    firework: 1779702813364
+    color: 1779702729316
+    dtools: 1779702675378
+    tools: 1779702666324
 money: '-1.001'
 last-account-name: Lengzai
 logoutlocation:
-  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
-  world-name: world_nether
-  x: -39.637596745974335
-  y: 36.5
-  z: 642.3133604373949
-  yaw: 164.70018005371094
-  pitch: 25.199987411499023
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -141.28859992747635
+  y: 73.0
+  z: 92.8337345860274
+  yaw: -82.563720703125
+  pitch: 35.56690979003906
 lastlocation:
-  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
-  world-name: world_nether
-  x: -227.0102503756387
-  y: 58.0
-  z: 381.2027729567697
-  yaw: 94.39310455322266
-  pitch: 13.499996185302734
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -170.16550732724124
+  y: 90.0
+  z: 235.25171378562894
+  yaw: 8.400922775268555
+  pitch: 21.750030517578125
 homes:
-  home:
-    world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
-    world-name: world
-    x: -107.44436100142049
-    y: 69.0
-    z: 144.30000001192093
-    yaw: 60.74998092651367
-    pitch: 10.349996566772461
   ne:
     world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
     world-name: world_nether

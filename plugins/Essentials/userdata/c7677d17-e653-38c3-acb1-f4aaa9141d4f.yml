@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: true
+flymode: true
+muted: false
+jailed: false
+ip-address: 26.74.180.239
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1779773122473
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1779778464505
+  login: 1779768933287
+money: '0'
+last-account-name: karomi25
+lastlocation:
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -82.91655832819143
+  y: 80.0
+  z: 66.47447262897214
+  yaw: -74.09869384765625
+  pitch: 18.15004539489746
+logoutlocation:
+  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
+  world-name: world_nether
+  x: -57.910844324044234
+  y: 255.0
+  z: 97.9665923280996
+  yaw: 83.89718627929688
+  pitch: 66.00018310546875

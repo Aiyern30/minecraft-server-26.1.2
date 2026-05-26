@@ -1,7 +1,7 @@
 teleportenabled: true
 teleportauto: false
 godmode: false
-flymode: false
+flymode: true
 muted: false
 jailed: false
 ip-address: 26.42.176.2
@@ -12,31 +12,31 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1779004813691
+  lastteleport: 1779774662467
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1779005277499
-  login: 1779001093509
+  logout: 1779774729199
+  login: 1779756767295
 money: '0'
 last-account-name: anehveryblack
 lastlocation:
   world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
   world-name: world_nether
-  x: -46.5
-  y: 16.0
-  z: 5.5
-  yaw: -153.37840270996094
-  pitch: 16.176204681396484
+  x: -91.71816586825365
+  y: 33.0
+  z: 655.08919711575
+  yaw: -103.736572265625
+  pitch: 31.868696212768555
 logoutlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -220.95695895317132
-  y: 71.0
-  z: 127.84716810075774
-  yaw: -179.844482421875
-  pitch: 41.04848098754883
+  x: -78.31818818525528
+  y: 80.0
+  z: 66.68347421468941
+  yaw: 89.18899536132812
+  pitch: 18.27793312072754
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
