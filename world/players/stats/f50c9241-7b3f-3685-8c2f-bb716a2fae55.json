@@ -1,35 +1,81 @@
 {
   "stats": {
-    "minecraft:used": {
-      "minecraft:dirt": 2
-    },
-    "minecraft:custom": {
-      "minecraft:time_since_rest": 418071,
-      "minecraft:walk_one_cm": 9222,
-      "minecraft:leave_game": 2,
-      "minecraft:damage_taken": 170,
-      "minecraft:play_time": 418071,
-      "minecraft:jump": 9,
-      "minecraft:time_since_death": 418071,
-      "minecraft:sprint_one_cm": 4637,
-      "minecraft:open_chest": 6,
-      "minecraft:total_world_time": 418071,
-      "minecraft:fly_one_cm": 1762,
-      "minecraft:crouch_one_cm": 279,
-      "minecraft:sneak_time": 36
-    },
     "minecraft:picked_up": {
-      "minecraft:chainmail_boots": 1,
       "minecraft:dirt": 2,
-      "minecraft:golden_leggings": 1,
-      "minecraft:leather_helmet": 1,
+      "minecraft:crimson_planks": 5,
       "minecraft:golden_boots": 1,
+      "minecraft:spruce_fence": 2,
+      "minecraft:crimson_stem": 1,
       "minecraft:bow": 2,
       "minecraft:arrow": 69,
-      "minecraft:bone": 22
+      "minecraft:bone": 22,
+      "minecraft:gold_nugget": 16,
+      "minecraft:rotten_flesh": 16,
+      "minecraft:lead": 24,
+      "minecraft:chainmail_boots": 1,
+      "minecraft:cod": 8,
+      "minecraft:golden_leggings": 1,
+      "minecraft:leather_helmet": 1,
+      "minecraft:chest": 7,
+      "minecraft:end_rod": 2
+    },
+    "minecraft:killed_by": {
+      "minecraft:phantom": 2,
+      "minecraft:zombified_piglin": 1
+    },
+    "minecraft:used": {
+      "minecraft:crimson_planks": 267,
+      "minecraft:chest": 79,
+      "minecraft:end_rod": 1,
+      "minecraft:dirt": 2,
+      "minecraft:bow": 13,
+      "minecraft:crimson_stem": 25
+    },
+    "minecraft:crafted": {
+      "minecraft:prismarine_bricks": 597,
+      "minecraft:crimson_planks": 412,
+      "minecraft:sea_lantern": 1204
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 8,
+      "minecraft:time_since_rest": 553666,
+      "minecraft:walk_one_cm": 90554,
+      "minecraft:leave_game": 3,
+      "minecraft:walk_under_water_one_cm": 8429,
+      "minecraft:mob_kills": 3,
+      "minecraft:damage_taken": 2100,
+      "minecraft:play_time": 1093125,
+      "minecraft:jump": 100,
+      "minecraft:time_since_death": 553447,
+      "minecraft:drop": 6,
+      "minecraft:sprint_one_cm": 19159,
+      "minecraft:open_chest": 373,
+      "minecraft:inspect_hopper": 1,
+      "minecraft:fall_one_cm": 14000,
+      "minecraft:total_world_time": 1093125,
+      "minecraft:fly_one_cm": 122791,
+      "minecraft:walk_on_water_one_cm": 74,
+      "minecraft:crouch_one_cm": 14251,
+      "minecraft:sneak_time": 5625,
+      "minecraft:deaths": 5
+    },
+    "minecraft:killed": {
+      "minecraft:zombified_piglin": 3
     },
     "minecraft:mined": {
-      "minecraft:dirt": 2
+      "minecraft:spruce_fence": 2,
+      "minecraft:dirt": 2,
+      "minecraft:chest": 7,
+      "minecraft:crimson_stem": 1,
+      "minecraft:crimson_planks": 4,
+      "minecraft:end_rod": 2
+    },
+    "minecraft:dropped": {
+      "minecraft:spruce_fence": 2,
+      "minecraft:end_rod": 1,
+      "minecraft:chainmail_boots": 1,
+      "minecraft:bow": 1,
+      "minecraft:bone": 22
     }
   },
   "DataVersion": 4790

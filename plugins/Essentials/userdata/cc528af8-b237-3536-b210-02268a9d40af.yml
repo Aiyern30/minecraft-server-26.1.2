@@ -1,6 +1,6 @@
 teleportenabled: true
 teleportauto: false
-godmode: false
+godmode: true
 flymode: true
 muted: false
 jailed: false
@@ -12,13 +12,13 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1779793981261
+  lastteleport: 1780503752866
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1779793999453
-  login: 1779768848819
+  logout: 1780504123977
+  login: 1780465013114
   kits:
     color: 1779545117389
 money: '0'
@@ -26,11 +26,11 @@ last-account-name: YourSonGays
 logoutlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -129.0709951074898
-  y: 64.0
-  z: 59.22209681125382
-  yaw: -8.162878036499023
-  pitch: 10.21693229675293
+  x: -220.52428258618502
+  y: 70.0
+  z: 175.0021211629364
+  yaw: 165.61289978027344
+  pitch: 15.866602897644043
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
@@ -43,11 +43,11 @@ homes:
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -1431.300000011921
-  y: 185.0
-  z: -254.30000001192093
-  yaw: 101.97933959960938
-  pitch: 33.7500114440918
+  x: -353.52457963124385
+  y: 256.0
+  z: 7.941987334375046
+  yaw: -111.95885467529297
+  pitch: 16.65007781982422
 mail:
 - legacy: false
   read: true
