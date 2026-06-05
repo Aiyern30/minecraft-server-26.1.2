@@ -262,6 +262,7 @@ fixes:
   disable-unloaded-chunk-enderpearl-exploit: false
   falling-block-height-nerf: disabled
   fix-items-merging-through-walls: false
+  fix-tnt-duplication: false
   prevent-tnt-from-moving-in-water: false
   split-overstacked-loot: true
   tnt-entity-height-nerf: disabled
