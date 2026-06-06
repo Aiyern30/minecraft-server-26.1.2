@@ -17,7 +17,7 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1780588527709
+  logout: 1780667698479
   login: 1780661425697
   kits:
     color: 1779545117389
@@ -26,11 +26,11 @@ last-account-name: YourSonGays
 logoutlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -218.8406133521287
-  y: 70.0
-  z: 187.3247295359239
-  yaw: -45.896026611328125
-  pitch: 4.673937797546387
+  x: -7870.698922152115
+  y: 200.0
+  z: -3742.8037698763405
+  yaw: 95.24922180175781
+  pitch: -17.549894332885742
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
