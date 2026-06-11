@@ -1,0 +1,8 @@
+name: GitSavePlugin
+version: 1.0
+main: GitSavePlugin
+api-version: '1.21'
+commands:
+  save-all:
+    description: Saves world and pushes to GitHub
+    permission: op
