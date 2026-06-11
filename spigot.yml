@@ -163,6 +163,8 @@ world-settings:
     unload-frozen-chunks: false
     hanging-tick-frequency: 100
     verbose: false
+  worldeditregentempworld:
+    verbose: false
 config-version: 13
 stats:
   disable-saving: false

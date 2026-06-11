@@ -1,6 +1,6 @@
 teleportenabled: true
 teleportauto: false
-godmode: true
+godmode: false
 flymode: true
 muted: false
 jailed: false
@@ -12,31 +12,31 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1780666732178
+  lastteleport: 1781075421857
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1780667277348
-  login: 1780665866425
+  logout: 1780971421589
+  login: 1781075090855
 money: '0'
 last-account-name: anehveryblack
 lastlocation:
-  world: 5eb768ec-500a-4240-9bc2-eef8d000687f
-  world-name: world_the_end
-  x: 3663.2288763029414
-  y: 63.0
-  z: -3090.928366960603
-  yaw: 136.2227783203125
-  pitch: 16.069602966308594
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: -221.53193267638483
+  y: 71.0
+  z: 128.2368031825005
+  yaw: 174.1470184326172
+  pitch: 5.219886302947998
 logoutlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -90.46917185701162
-  y: 6.0
-  z: 123.56917491706838
-  yaw: -92.03656005859375
-  pitch: 30.239025115966797
+  x: -221.77533630249903
+  y: 71.0
+  z: 128.33669954637355
+  yaw: -129.5356903076172
+  pitch: 17.740596771240234
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
