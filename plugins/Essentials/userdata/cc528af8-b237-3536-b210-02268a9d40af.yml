@@ -18,7 +18,7 @@ timestamps:
   jail: 0
   onlinejail: 0
   logout: 1781330110251
-  login: 1781330755565
+  login: 1781331075662
   kits:
     color: 1779545117389
 money: '0'
@@ -43,11 +43,11 @@ homes:
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: 952.7627382820225
-  y: 70.0
-  z: 1977.5483750270078
-  yaw: -140.54872131347656
-  pitch: 13.799981117248535
+  x: -3604.3035902668153
+  y: 139.08855936974297
+  z: -2532.2908377428407
+  yaw: 134.1012420654297
+  pitch: 20.700027465820312
 mail:
 - legacy: false
   read: true
