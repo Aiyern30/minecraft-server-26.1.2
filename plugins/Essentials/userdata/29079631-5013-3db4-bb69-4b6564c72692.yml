@@ -17,8 +17,8 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1781172676963
-  login: 1781172486861
+  logout: 1781333848363
+  login: 1781333787096
 money: '0'
 last-account-name: anehveryblack
 lastlocation:
@@ -32,11 +32,11 @@ lastlocation:
 logoutlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -191.92007127630805
+  x: -163.32286375575384
   y: 153.0
-  z: 222.3186590002179
-  yaw: 178.39418029785156
-  pitch: 27.265605926513672
+  z: 189.3772295802709
+  yaw: -118.35877227783203
+  pitch: 72.36809539794922
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
