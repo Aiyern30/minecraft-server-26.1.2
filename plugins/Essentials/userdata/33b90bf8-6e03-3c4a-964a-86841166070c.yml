@@ -1,7 +1,7 @@
 teleportenabled: true
 teleportauto: false
 godmode: false
-flymode: true
+flymode: false
 muted: false
 jailed: false
 ip-address: 26.104.212.162
@@ -12,13 +12,13 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1781328612019
+  lastteleport: 1781337126960
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
   logout: 1781328650584
-  login: 1781328431988
+  login: 1781336812344
   kits:
     notch: 1779694335689
     firework: 1779702813364
@@ -38,11 +38,11 @@ logoutlocation:
 lastlocation:
   world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
   world-name: world_nether
-  x: -55.5
-  y: 255.0
-  z: 97.5
-  yaw: 58.54694366455078
-  pitch: 25.05031967163086
+  x: -128.65625242426913
+  y: 92.0
+  z: 342.72711542392574
+  yaw: -178.90838623046875
+  pitch: 10.649988174438477
 homes:
   ne:
     world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
