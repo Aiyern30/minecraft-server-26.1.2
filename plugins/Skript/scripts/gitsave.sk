@@ -1,4 +1,2 @@
 on command "save-all":
-    send "&a[GitSave] &fSaving and pushing to GitHub..." to player
-    wait 5 seconds
-    send "&a[GitSave] &fDone! World saved and pushed to GitHub ✅" to player
+    send "&a[GitSave] &fSaving world and pushing to GitHub..." to player

@@ -17,8 +17,8 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1781328654339
-  login: 1781329369207
+  logout: 1781330110251
+  login: 1781330478772
   kits:
     color: 1779545117389
 money: '0'
@@ -26,11 +26,11 @@ last-account-name: YourSonGays
 logoutlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -115.09635832580393
-  y: 63.96007104345834
-  z: 132.5629118506544
-  yaw: -87.44937133789062
-  pitch: 4.049987316131592
+  x: 1608.5
+  y: 70.0
+  z: 1309.5
+  yaw: -179.69920349121094
+  pitch: 24.900150299072266
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
@@ -43,11 +43,11 @@ homes:
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: 1568.5
-  y: 63.0
-  z: 1202.5
-  yaw: -133.6492919921875
-  pitch: 9.300142288208008
+  x: 1831.5
+  y: 50.0
+  z: 1595.5
+  yaw: 0.451171875
+  pitch: 9.899995803833008
 mail:
 - legacy: false
   read: true
