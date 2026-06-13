@@ -44,14 +44,14 @@ def git_backup(triggered_by=None):
     # Notify in-game with real result
     if success:
         if triggered_by:
-            send_to_server(f'tell {triggered_by} &a[GitSave] &fDone! Pushed to GitHub ✅ ({date})')
+            send_to_server(f'tell {triggered_by} &a[GitSave] &fDone! Pushed to GitHub ({date})')
         else:
-            send_to_server(f'broadcast &a[GitSave] &fDone! Pushed to GitHub ✅ ({date})')
+            send_to_server(f'broadcast &a[GitSave] &fDone! Pushed to GitHub ({date})')
     else:
         if triggered_by:
-            send_to_server(f'tell {triggered_by} &c[GitSave] &fGit push failed! Check console ❌')
+            send_to_server(f'tell {triggered_by} &c[GitSave] &fGit push failed! Check console FAILED')
         else:
-            send_to_server('broadcast &c[GitSave] &fGit push failed! Check console ❌')
+            send_to_server('broadcast &c[GitSave] &fGit push failed! Check console FAILED')
 
     print(f"[GitSave] Finished: {date}\n")
 
