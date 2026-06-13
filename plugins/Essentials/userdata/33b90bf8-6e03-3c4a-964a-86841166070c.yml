@@ -17,7 +17,7 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1781172427705
+  logout: 1781328650584
   login: 1781328431988
   kits:
     notch: 1779694335689
@@ -28,13 +28,13 @@ timestamps:
 money: '-1.001'
 last-account-name: Lengzai
 logoutlocation:
-  world: 5eb768ec-500a-4240-9bc2-eef8d000687f
-  world-name: world_the_end
-  x: -7.04815051163569
-  y: 64.0
-  z: 1.5091047623878031
-  yaw: -49.9658203125
-  pitch: 31.84858512878418
+  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
+  world-name: world_nether
+  x: -56.173618628298
+  y: 255.0
+  z: 97.6290094480787
+  yaw: 68.59696960449219
+  pitch: 43.05030822753906
 lastlocation:
   world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
   world-name: world_nether
