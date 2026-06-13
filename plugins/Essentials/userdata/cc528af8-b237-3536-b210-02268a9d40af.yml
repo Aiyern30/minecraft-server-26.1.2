@@ -18,7 +18,7 @@ timestamps:
   jail: 0
   onlinejail: 0
   logout: 1781328654339
-  login: 1781328435354
+  login: 1781329369207
   kits:
     color: 1779545117389
 money: '0'
@@ -41,13 +41,13 @@ homes:
     yaw: 89.700439453125
     pitch: 2.69999361038208
 lastlocation:
-  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
-  world-name: world_nether
-  x: -57.99214886400358
-  y: 255.0
-  z: 98.84092051066109
-  yaw: -78.10324096679688
-  pitch: 37.650001525878906
+  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
+  world-name: world
+  x: 353.30285326253676
+  y: 126.0
+  z: 673.444704433976
+  yaw: 93.75125122070312
+  pitch: 3.300016164779663
 mail:
 - legacy: false
   read: true
