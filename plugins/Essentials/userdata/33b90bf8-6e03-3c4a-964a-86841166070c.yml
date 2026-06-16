@@ -1,7 +1,7 @@
 teleportenabled: true
 teleportauto: false
 godmode: false
-flymode: false
+flymode: true
 muted: false
 jailed: false
 ip-address: 26.104.212.162
@@ -18,7 +18,7 @@ timestamps:
   jail: 0
   onlinejail: 0
   logout: 1781339816091
-  login: 1781336812344
+  login: 1781591477692
   kits:
     notch: 1779694335689
     firework: 1779702813364
