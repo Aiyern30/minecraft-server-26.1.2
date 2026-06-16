@@ -1,7 +1,7 @@
 teleportenabled: true
 teleportauto: false
 godmode: false
-flymode: false
+flymode: true
 muted: false
 jailed: false
 ip-address: 26.104.212.162
@@ -12,7 +12,7 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1781605122237
+  lastteleport: 1781606878229
   lastheal: 0
   mute: 0
   jail: 0
@@ -38,11 +38,11 @@ logoutlocation:
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: 3450.1754877800554
-  y: 63.0
-  z: -1839.9639725418444
-  yaw: 97.2933349609375
-  pitch: 11.69996452331543
+  x: 5935.5
+  y: 136.0
+  z: -2726.5
+  yaw: -78.9560546875
+  pitch: 4.9500412940979
 homes:
   ne:
     world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
