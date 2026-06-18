@@ -18,17 +18,39 @@ def send_to_server(command):
         server_proc.stdin.write(command + "\n")
         server_proc.stdin.flush()
 
+def check_clean_working_tree():
+    """Check for uncommitted/untracked local changes. Returns True if clean."""
+    print("[GitSave] Checking for uncommitted local changes...")
+    r = subprocess.run(["git", "status", "--porcelain"], cwd=SERVER_DIR, capture_output=True, text=True)
+    if r.returncode != 0:
+        print("[GitSave] ERROR: git status failed:")
+        print(r.stderr.strip())
+        return False
+    if r.stdout.strip():
+        print("[GitSave] ERROR: Uncommitted local changes detected!")
+        print("[GitSave] This usually means the server stopped/crashed before the last backup finished.")
+        print("[GitSave] Changed files:")
+        print(r.stdout.strip())
+        print("\n[GitSave] Refusing to start until this is resolved. Options:")
+        print("  1. Run the backup manually:  git add . && git commit -m \"manual save\" && git push")
+        print("  2. Discard local changes (DANGER, loses data):  git checkout -- . && git clean -fd")
+        return False
+    print("[GitSave] Working tree clean.")
+    return True
+
 def git_pull():
-    """Pull latest changes from GitHub before starting the server"""
+    """Pull latest changes from GitHub before starting the server. Returns True on success."""
     print("[GitSave] Pulling latest changes from GitHub...")
     r = subprocess.run(["git", "pull", "--ff-only"], cwd=SERVER_DIR, capture_output=True, text=True)
     if r.stdout.strip(): print(r.stdout.strip())
     if r.stderr.strip(): print(r.stderr.strip())
     if r.returncode != 0:
-        print("[GitSave] WARNING: git pull failed! (conflicts or diverged history?)")
-        print("[GitSave] Starting server anyway with local files. Resolve manually if needed.\n")
-    else:
-        print("[GitSave] Pull complete.\n")
+        print("[GitSave] ERROR: git pull failed! (conflicts or diverged history?)")
+        print("[GitSave] Refusing to start with potentially stale/conflicting world data.")
+        print("[GitSave] Resolve manually (check 'git status' / 'git log') then restart.")
+        return False
+    print("[GitSave] Pull complete.\n")
+    return True
 
 def git_backup(triggered_by=None):
     date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -72,7 +94,11 @@ def run_server():
     print("[GitSave] Starting Minecraft server...")
     print("[GitSave] /save-all in-game OR 'save-all' in console will push to GitHub\n")
 
-    git_pull()
+    if not check_clean_working_tree():
+        sys.exit(1)
+
+    if not git_pull():
+        sys.exit(1)
 
     server_proc = subprocess.Popen(
         ["java", "-Xmx2G", "-Xms1G", "-jar", JAR, "nogui"],
