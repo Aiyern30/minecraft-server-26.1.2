@@ -18,6 +18,18 @@ def send_to_server(command):
         server_proc.stdin.write(command + "\n")
         server_proc.stdin.flush()
 
+def git_pull():
+    """Pull latest changes from GitHub before starting the server"""
+    print("[GitSave] Pulling latest changes from GitHub...")
+    r = subprocess.run(["git", "pull", "--ff-only"], cwd=SERVER_DIR, capture_output=True, text=True)
+    if r.stdout.strip(): print(r.stdout.strip())
+    if r.stderr.strip(): print(r.stderr.strip())
+    if r.returncode != 0:
+        print("[GitSave] WARNING: git pull failed! (conflicts or diverged history?)")
+        print("[GitSave] Starting server anyway with local files. Resolve manually if needed.\n")
+    else:
+        print("[GitSave] Pull complete.\n")
+
 def git_backup(triggered_by=None):
     date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"\n[GitSave] Running git backup at {date}...")
@@ -26,7 +38,7 @@ def git_backup(triggered_by=None):
     if triggered_by:
         send_to_server(f'broadcast &a[GitSave] &fPushing to GitHub...')
     else:
-        send_to_server('broadcast &a[GitSave] &fPushing to GitHub...')
+        send_to_server(f'broadcast &a[GitSave] &fPushing to GitHub...')
 
     cmds = [["git", "add", "."], ["git", "commit", "-m", date], ["git", "push"]]
     success = True
@@ -59,6 +71,8 @@ def run_server():
     global server_proc
     print("[GitSave] Starting Minecraft server...")
     print("[GitSave] /save-all in-game OR 'save-all' in console will push to GitHub\n")
+
+    git_pull()
 
     server_proc = subprocess.Popen(
         ["java", "-Xmx2G", "-Xms1G", "-jar", JAR, "nogui"],
