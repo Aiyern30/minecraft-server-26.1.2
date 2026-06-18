@@ -17,7 +17,7 @@ timestamps:
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1781790029804
+  logout: 1781796218968
   login: 1781792872479
   kits:
     color: 1779545117389
@@ -26,11 +26,11 @@ last-account-name: YourSonGays
 logoutlocation:
   world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
   world-name: world_nether
-  x: -91.38946835684062
-  y: 33.0
-  z: 653.4153756079064
-  yaw: -54.969093322753906
-  pitch: 5.512998580932617
+  x: -229.75080653088236
+  y: 58.0
+  z: 385.30000001192093
+  yaw: -41.35686111450195
+  pitch: 7.350031852722168
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
