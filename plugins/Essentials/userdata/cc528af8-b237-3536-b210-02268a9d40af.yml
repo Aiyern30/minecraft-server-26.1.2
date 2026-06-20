@@ -1,6 +1,6 @@
 teleportenabled: true
 teleportauto: false
-godmode: false
+godmode: true
 flymode: true
 muted: false
 jailed: false
@@ -12,7 +12,7 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1781944417317
+  lastteleport: 1781953069718
   lastheal: 0
   mute: 0
   jail: 0
@@ -43,11 +43,11 @@ homes:
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -71.06886022653819
-  y: 64.0
-  z: 126.38596166265953
-  yaw: -16.799591064453125
-  pitch: 38.24996566772461
+  x: -94.95748022710221
+  y: 76.48053009090584
+  z: 134.93106280571573
+  yaw: 73.20013427734375
+  pitch: -6.9000043869018555
 mail:
 - legacy: false
   read: true
