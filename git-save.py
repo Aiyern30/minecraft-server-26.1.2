@@ -11,6 +11,10 @@ JAR = "paper-26.1.2-69.jar"
 # Global reference to server process
 server_proc = None
 
+# Used to coordinate "save finished" signal between the log reader thread
+# and whichever thread issued the save command.
+save_complete_event = threading.Event()
+
 def send_to_server(command):
     """Send a command to the Minecraft server console"""
     global server_proc
@@ -56,11 +60,7 @@ def git_backup(triggered_by=None):
     date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"\n[GitSave] Running git backup at {date}...")
 
-    # Notify in-game that backup started
-    if triggered_by:
-        send_to_server(f'broadcast &a[GitSave] &fPushing to GitHub...')
-    else:
-        send_to_server(f'broadcast &a[GitSave] &fPushing to GitHub...')
+    send_to_server('broadcast &a[GitSave] &fPushing to GitHub...')
 
     cmds = [["git", "add", "."], ["git", "commit", "-m", date], ["git", "push"]]
     success = True
@@ -75,19 +75,29 @@ def git_backup(triggered_by=None):
             success = False
             break
 
-    # Notify in-game with real result
     if success:
-        if triggered_by:
-            send_to_server(f'broadcast &a[GitSave] &fDone! Pushed to GitHub ({date})')
-        else:
-            send_to_server(f'broadcast &a[GitSave] &fDone! Pushed to GitHub ({date})')
+        send_to_server(f'broadcast &a[GitSave] &fDone! Pushed to GitHub ({date})')
     else:
-        if triggered_by:
-            send_to_server(f'broadcast &c[GitSave] &fGit push failed! Check console FAILED')
-        else:
-            send_to_server('broadcast &c[GitSave] &fGit push failed! Check console FAILED')
+        send_to_server('broadcast &c[GitSave] &fGit push failed! Check console FAILED')
 
     print(f"[GitSave] Finished: {date}\n")
+
+def wait_for_save_then_backup(triggered_by=None, timeout=60):
+    """
+    Block until the server logs that the save actually finished,
+    then run the git backup. Falls back to a timeout so we never
+    hang forever if the expected log line never appears.
+    """
+    save_complete_event.clear()
+    got_it = save_complete_event.wait(timeout=timeout)
+    if not got_it:
+        print("[GitSave] WARNING: Timed out waiting for 'Saved the game' message. "
+              "Proceeding with backup anyway, but world files may still be mid-write.")
+    else:
+        # Small safety margin: on some setups multiple worlds log
+        # "Saved" lines a few hundred ms apart. Give it a moment to settle.
+        time.sleep(1)
+    git_backup(triggered_by)
 
 def run_server():
     global server_proc
@@ -114,17 +124,21 @@ def run_server():
         for line in server_proc.stdout:
             print(line, end="")
             sys.stdout.flush()
+
             # Detect in-game /save-all and grab who typed it
             if "issued server command: /save-all" in line:
-                # Extract player name from log line like:
-                # [13:49:58 INFO]: PlayerName issued server command: /save-all
                 try:
                     player = line.split("]: ")[1].split(" issued")[0].strip()
-                except:
+                except Exception:
                     player = None
-                print(f"[GitSave] Detected /save-all from: {player}")
-                time.sleep(2)  # wait for world save to finish
-                threading.Thread(target=git_backup, args=(player,), daemon=True).start()
+                print(f"[GitSave] Detected /save-all from: {player} -- waiting for save to finish...")
+                threading.Thread(target=wait_for_save_then_backup, args=(player,), daemon=True).start()
+
+            # Paper/Spigot logs this once the world(s) are actually flushed to disk.
+            # Different forks phrase it slightly differently, so we check a couple of variants.
+            lowered = line.lower()
+            if "saved the game" in lowered or "saved the world" in lowered:
+                save_complete_event.set()
 
     t = threading.Thread(target=read_output, daemon=True)
     t.start()
@@ -138,8 +152,8 @@ def run_server():
         if user_input.strip().lower() in ("save-all", "/save-all"):
             server_proc.stdin.write("save-all\n")
             server_proc.stdin.flush()
-            time.sleep(2)
-            threading.Thread(target=git_backup, daemon=True).start()
+            print("[GitSave] Issued save-all from console -- waiting for save to finish...")
+            threading.Thread(target=wait_for_save_then_backup, daemon=True).start()
         else:
             server_proc.stdin.write(user_input + "\n")
             server_proc.stdin.flush()
