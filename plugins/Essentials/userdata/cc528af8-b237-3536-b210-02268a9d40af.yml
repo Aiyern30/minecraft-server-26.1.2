@@ -43,11 +43,11 @@ homes:
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -284.376547871009
-  y: 64.10969632455537
-  z: 3480.9903757889756
-  yaw: -179.63790893554688
-  pitch: 6.900025844573975
+  x: 950.5
+  y: 66.7179090328582
+  z: 4176.5
+  yaw: -38.488250732421875
+  pitch: 43.050010681152344
 mail:
 - legacy: false
   read: true
