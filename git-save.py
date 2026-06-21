@@ -140,6 +140,15 @@ def run_server():
             if "saved the game" in lowered or "saved the world" in lowered:
                 save_complete_event.set()
 
+            # Catch in-game /stop too (an op typing it directly, not through
+            # your console). Vanilla/Paper triggers its own save on shutdown,
+            # but that save happens AFTER the "stopping the server" message
+            # and isn't guaranteed to finish before the process exits -- so
+            # we still want our safety-net backup at the bottom of run_server
+            # to fire once the process actually ends.
+            if "issued server command: /stop" in line or "stopping the server" in lowered:
+                print("[GitSave] Server is shutting down -- will run safety-net backup once it exits.")
+
     t = threading.Thread(target=read_output, daemon=True)
     t.start()
 
@@ -149,14 +158,51 @@ def run_server():
         except EOFError:
             break
 
-        if user_input.strip().lower() in ("save-all", "/save-all"):
+        cmd_lower = user_input.strip().lower()
+
+        if cmd_lower in ("save-all", "/save-all"):
             server_proc.stdin.write("save-all\n")
             server_proc.stdin.flush()
             print("[GitSave] Issued save-all from console -- waiting for save to finish...")
             threading.Thread(target=wait_for_save_then_backup, daemon=True).start()
+
+        elif cmd_lower in ("stop", "/stop", "end", "shutdown"):
+            # Force a final save BEFORE the server shuts down, wait for it to
+            # actually finish, THEN let the server stop, THEN do one last
+            # synchronous backup. This is the step that was missing -- without
+            # it, anything that happened after your last manual /save-all
+            # (which is almost always overworld activity, since players are
+            # there) never gets committed.
+            print("[GitSave] Shutdown requested -- saving world before stopping...")
+            save_complete_event.clear()
+            server_proc.stdin.write("save-all\n")
+            server_proc.stdin.flush()
+            got_it = save_complete_event.wait(timeout=60)
+            if not got_it:
+                print("[GitSave] WARNING: save confirmation timed out before shutdown; "
+                      "proceeding anyway.")
+            else:
+                time.sleep(1)
+
+            print("[GitSave] Stopping server...")
+            server_proc.stdin.write("stop\n")
+            server_proc.stdin.flush()
+            server_proc.wait()  # block here until the process actually exits
+
+            print("[GitSave] Server stopped. Running final backup...")
+            git_backup("shutdown")
+            break
+
         else:
             server_proc.stdin.write(user_input + "\n")
             server_proc.stdin.flush()
+
+    # Catch-all: if the loop exited some other way (e.g. server crashed,
+    # or stdin closed via EOF) and the process has already ended without
+    # us running a shutdown backup above, still try to save what we can.
+    if server_proc.poll() is not None:
+        print("[GitSave] Server process has exited. Running safety-net backup...")
+        git_backup("process-exit")
 
     server_proc.wait()
 
