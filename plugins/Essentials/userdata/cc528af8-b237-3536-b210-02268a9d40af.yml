@@ -12,13 +12,13 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1782018843276
+  lastteleport: 1782021744806
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
   logout: 1782020368102
-  login: 1782018782841
+  login: 1782020701849
   kits:
     color: 1779545117389
 money: '0'
@@ -43,11 +43,11 @@ homes:
 lastlocation:
   world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
   world-name: world
-  x: -38.41595054754007
-  y: 99.01046836062756
-  z: 175.46783037626736
-  yaw: -88.049560546875
-  pitch: 10.349976539611816
+  x: -164.93449498272005
+  y: 118.67497413053025
+  z: 184.11950687963852
+  yaw: -21.14910888671875
+  pitch: 2.400007724761963
 mail:
 - legacy: false
   read: true
