@@ -102,7 +102,7 @@ def wait_for_save_then_backup(triggered_by=None, timeout=60):
 def run_server():
     global server_proc
     print("[GitSave] Starting Minecraft server...")
-    print("[GitSave] /save-all in-game OR 'save-all' in console will push to GitHub\n")
+    print("[GitSave] /save-all in-game OR 'save-all' in console will force a full flush and push to GitHub\n")
 
     if not check_clean_working_tree():
         sys.exit(1)
@@ -125,13 +125,21 @@ def run_server():
             print(line, end="")
             sys.stdout.flush()
 
-            # Detect in-game /save-all and grab who typed it
+            # Detect in-game /save-all and grab who typed it.
+            # Players can only type the plain "/save-all" command -- they can't
+            # pass the "flush" argument themselves. So when we see this, we
+            # issue "save-all flush" to the console on their behalf, which
+            # forces Paper to immediately write every loaded chunk's region
+            # files to disk instead of relying on its normal lazy save
+            # scheduling. This is what was causing overworld .mca files to
+            # not show as changed until a full server shutdown.
             if "issued server command: /save-all" in line:
                 try:
                     player = line.split("]: ")[1].split(" issued")[0].strip()
                 except Exception:
                     player = None
-                print(f"[GitSave] Detected /save-all from: {player} -- waiting for save to finish...")
+                print(f"[GitSave] Detected /save-all from: {player} -- forcing full flush...")
+                send_to_server("save-all flush")
                 threading.Thread(target=wait_for_save_then_backup, args=(player,), daemon=True).start()
 
             # Paper/Spigot logs this once the world(s) are actually flushed to disk.
@@ -161,9 +169,9 @@ def run_server():
         cmd_lower = user_input.strip().lower()
 
         if cmd_lower in ("save-all", "/save-all"):
-            server_proc.stdin.write("save-all\n")
+            server_proc.stdin.write("save-all flush\n")
             server_proc.stdin.flush()
-            print("[GitSave] Issued save-all from console -- waiting for save to finish...")
+            print("[GitSave] Issued save-all flush from console -- waiting for save to finish...")
             threading.Thread(target=wait_for_save_then_backup, daemon=True).start()
 
         elif cmd_lower in ("stop", "/stop", "end", "shutdown"):
@@ -175,7 +183,7 @@ def run_server():
             # there) never gets committed.
             print("[GitSave] Shutdown requested -- saving world before stopping...")
             save_complete_event.clear()
-            server_proc.stdin.write("save-all\n")
+            server_proc.stdin.write("save-all flush\n")
             server_proc.stdin.flush()
             got_it = save_complete_event.wait(timeout=60)
             if not got_it:
