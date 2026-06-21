@@ -5,10 +5,15 @@ from datetime import datetime
 
 # ---- CONFIG: edit these two paths if your setup changes ----
 
-# Your JourneyMap data folder for this server (the long ID folder you found).
+# Your JourneyMap data folder for this server. This MUST point at the
+# modpack profile's own journeymap folder under .minecraft/versions/<profile>/,
+# not the root .minecraft/journeymap folder -- TLauncher modpack profiles
+# keep their own separate game directory, and the root folder can contain
+# stale/unrelated data from a different setup.
 JOURNEYMAP_SOURCE = (
-    r"C:\Users\ianbi\AppData\Roaming\.minecraft\journeymap\data\mp"
-    r"\Minecraft~Server_742c2b52~d939~4a46~8403~8afb25274c85"
+    r"C:\Users\ianbi\AppData\Roaming\.minecraft\versions"
+    r"\Immersed With Shaders IWS 26.1.2 Fabric-v1"
+    r"\journeymap\data\mp\Ian~Own~s~Server"
 )
 
 # Your server's git repo folder (same one git-save.py lives in).
@@ -18,9 +23,19 @@ SERVER_REPO_DIR = r"C:\Users\ianbi\Desktop\Ian Server"
 # own world/ folder so it never gets mixed up with actual world data.
 DEST_FOLDER_NAME = os.path.join("client-map-backup", "YourSonGays")
 
+# Folder names to skip entirely when copying. "chunk_cache" holds JourneyMap's
+# internal per-chunk performance cache (.jmc files) -- it's regenerated
+# automatically from world data and isn't the actual visible map, so backing
+# it up just bloats the repo with thousands of small files for no benefit.
+EXCLUDED_FOLDER_NAMES = {"chunk_cache"}
+
 # ---- End of config ----
 
 DEST_PATH = os.path.join(SERVER_REPO_DIR, DEST_FOLDER_NAME)
+
+
+def _ignore_excluded(dir_path, names):
+    return [n for n in names if n in EXCLUDED_FOLDER_NAMES]
 
 
 def copy_map_data():
@@ -40,8 +55,9 @@ def copy_map_data():
 
     os.makedirs(os.path.dirname(DEST_PATH), exist_ok=True)
 
-    print("[MapSave] Copying map data... (this may take a moment for large maps)")
-    shutil.copytree(JOURNEYMAP_SOURCE, DEST_PATH)
+    print("[MapSave] Copying map data (skipping chunk_cache)... "
+          "this may take a moment for large maps")
+    shutil.copytree(JOURNEYMAP_SOURCE, DEST_PATH, ignore=_ignore_excluded)
     print("[MapSave] Copy complete.")
     return True
 
