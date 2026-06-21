@@ -56,6 +56,50 @@ def git_pull():
     print("[GitSave] Pull complete.\n")
     return True
 
+def get_git_status_snapshot():
+    """Returns the current 'git status --porcelain' output as a string."""
+    r = subprocess.run(["git", "status", "--porcelain"], cwd=SERVER_DIR, capture_output=True, text=True)
+    if r.returncode != 0:
+        return None
+    return r.stdout
+
+def wait_for_disk_to_settle(max_wait=120, poll_interval=2, stable_checks=2):
+    """
+    Poll git status repeatedly until the set of changed files stops growing
+    and stays identical across several checks in a row. This protects against
+    cases where the server log says "Saved the game" but the OS is still
+    flushing region files to disk underneath it (common on Windows) -- if we
+    git add/commit/push too early, we capture a partial, inconsistent set of
+    files and the rest only show up later (or on the next backup), which
+    looks like "it didn't push" even though a push did happen.
+
+    Returns once status is stable, or after max_wait seconds as a fallback.
+    """
+    print("[GitSave] Waiting for world files to finish writing to disk...")
+    start = time.time()
+    last_status = None
+    stable_count = 0
+
+    while time.time() - start < max_wait:
+        status = get_git_status_snapshot()
+        if status is None:
+            print("[GitSave] WARNING: git status failed while waiting for disk to settle.")
+            time.sleep(poll_interval)
+            continue
+
+        if status == last_status:
+            stable_count += 1
+            if stable_count >= stable_checks:
+                print(f"[GitSave] Disk appears settled after {int(time.time() - start)}s.")
+                return
+        else:
+            stable_count = 0  # status changed, reset the stability counter
+
+        last_status = status
+        time.sleep(poll_interval)
+
+    print(f"[GitSave] WARNING: Disk did not settle within {max_wait}s, proceeding anyway.")
+
 def git_backup(triggered_by=None):
     date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"\n[GitSave] Running git backup at {date}...")
@@ -84,19 +128,16 @@ def git_backup(triggered_by=None):
 
 def wait_for_save_then_backup(triggered_by=None, timeout=60):
     """
-    Block until the server logs that the save actually finished,
-    then run the git backup. Falls back to a timeout so we never
-    hang forever if the expected log line never appears.
+    Block until the server logs that the save actually finished, then wait
+    for the filesystem to stop changing (see wait_for_disk_to_settle), then
+    run the git backup.
     """
     save_complete_event.clear()
     got_it = save_complete_event.wait(timeout=timeout)
     if not got_it:
         print("[GitSave] WARNING: Timed out waiting for 'Saved the game' message. "
               "Proceeding with backup anyway, but world files may still be mid-write.")
-    else:
-        # Small safety margin: on some setups multiple worlds log
-        # "Saved" lines a few hundred ms apart. Give it a moment to settle.
-        time.sleep(1)
+    wait_for_disk_to_settle()
     git_backup(triggered_by)
 
 def run_server():
@@ -189,8 +230,7 @@ def run_server():
             if not got_it:
                 print("[GitSave] WARNING: save confirmation timed out before shutdown; "
                       "proceeding anyway.")
-            else:
-                time.sleep(1)
+            wait_for_disk_to_settle()
 
             print("[GitSave] Stopping server...")
             server_proc.stdin.write("stop\n")
