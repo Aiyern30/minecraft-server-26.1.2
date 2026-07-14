@@ -1,6 +1,6 @@
 teleportenabled: true
 teleportauto: false
-godmode: false
+godmode: true
 flymode: true
 muted: false
 jailed: false
@@ -12,25 +12,25 @@ powertoolsenabled: true
 accepting-pay: true
 baltop-exempt: false
 timestamps:
-  lastteleport: 1782489586560
+  lastteleport: 1784016924330
   lastheal: 0
   mute: 0
   jail: 0
   onlinejail: 0
-  logout: 1782489745783
-  login: 1782480681558
+  logout: 1784016927325
+  login: 1784012645374
   kits:
     color: 1779545117389
 money: '0'
 last-account-name: YourSonGays
 logoutlocation:
-  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
-  world-name: world
-  x: -108.86337638227776
-  y: 63.0
-  z: 129.95107419751437
-  yaw: -75.59912109375
-  pitch: 25.94996452331543
+  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
+  world-name: world_nether
+  x: -120.5
+  y: 256.0
+  z: -39.5
+  yaw: -87.70208740234375
+  pitch: 28.799970626831055
 homes:
   home:
     world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
@@ -41,13 +41,13 @@ homes:
     yaw: 89.700439453125
     pitch: 2.69999361038208
 lastlocation:
-  world: aa81f632-3a1e-4dd4-91a1-cce4a1d20a09
-  world-name: world
-  x: -108.78435110441002
-  y: 63.0
-  z: 132.90025510164048
-  yaw: 1.800048828125
-  pitch: 11.849987983703613
+  world: 317fb53e-96b9-497f-bdb8-c9985edbc4f7
+  world-name: world_nether
+  x: -118.71383953778681
+  y: 147.40749957829078
+  z: -45.754662796342494
+  yaw: -56.802001953125
+  pitch: 33.749942779541016
 mail:
 - legacy: false
   read: true
